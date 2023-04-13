@@ -8,3 +8,4 @@ pico_sdk_init()
 
 add_subdirectory(freertos)
 add_subdirectory(ProjectFile)
+add_subdirectory(service)

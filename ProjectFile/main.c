@@ -2,6 +2,7 @@
 #include <FreeRTOS.h>
 #include <stdio.h>
 #include <task.h>
+#include "shell_port.h"
 
 void led_task()
 {
@@ -31,8 +32,9 @@ int main()
 {
     stdio_init_all();
     printf("pico init stdio all finished\n");
-    xTaskCreate(led_task, "LED_Task", 256, NULL, 1, NULL);
-    xTaskCreate(uart_task, "UART_Task", 256, NULL, 1, NULL);
+    // xTaskCreate(led_task, "LED_Task", 256, NULL, 1, NULL);
+    // xTaskCreate(uart_task, "UART_Task", 256, NULL, 1, NULL);
+    xTaskCreate(User_Shell_Init, "Shell", 256, NULL, 1, NULL);
     vTaskStartScheduler();
 
     while (1) {
