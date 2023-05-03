@@ -4,6 +4,7 @@
 // #include "pico/stdlib.h"
 #include "stdio.h"
 #include <FreeRTOS.h>
+#include <task.h>
 
 Shell shell;
 char  shell_buffer[512];

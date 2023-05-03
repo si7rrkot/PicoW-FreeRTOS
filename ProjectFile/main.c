@@ -34,7 +34,7 @@ int main()
     printf("pico init stdio all finished\n");
     // xTaskCreate(led_task, "LED_Task", 256, NULL, 1, NULL);
     // xTaskCreate(uart_task, "UART_Task", 256, NULL, 1, NULL);
-    xTaskCreate(User_Shell_Init, "Shell", 256, NULL, 1, NULL);
+    xTaskCreate((TaskFunction_t)User_Shell_Init, "Shell", 256, NULL, 1, NULL);
     vTaskStartScheduler();
 
     while (1) {

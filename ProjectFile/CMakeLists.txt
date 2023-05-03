@@ -1,5 +1,4 @@
 add_executable(blink
-    shell_port.c
     main.c
 )
 
