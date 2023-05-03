@@ -28,6 +28,7 @@ extern void shellCmds(void);
 extern void shellVars(void);
 extern void shellKeys(void);
 extern void shellClear(void);
+extern int  wifi_scan();
 #if SHELL_EXEC_UNDEF_FUNC == 1
 extern int shellExecute(int argc, char *argv[]);
 #endif
@@ -86,6 +87,8 @@ const ShellCommand shellCommandList[] =
                    clear, shellClear, clear console),
     SHELL_CMD_ITEM(SHELL_CMD_PERMISSION(0)|SHELL_CMD_TYPE(SHELL_TYPE_CMD_FUNC)|SHELL_CMD_DISABLE_RETURN,
                    sh, SHELL_AGENCY_FUNC_NAME(shellRun), run command directly),
+    SHELL_CMD_ITEM(SHELL_CMD_PERMISSION(0)|SHELL_CMD_TYPE(SHELL_TYPE_CMD_FUNC)|SHELL_CMD_DISABLE_RETURN,
+                   wifi_scan, wifi_scan, scan all wifi),
 #if SHELL_EXEC_UNDEF_FUNC == 1
     SHELL_CMD_ITEM(SHELL_CMD_PERMISSION(0)|SHELL_CMD_TYPE(SHELL_TYPE_CMD_MAIN)|SHELL_CMD_DISABLE_RETURN,
                    exec, shellExecute, execute function undefined),

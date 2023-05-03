@@ -39,7 +39,11 @@ target_include_directories(FreeRTOS PRIVATE
   ${CMAKE_CURRENT_LIST_DIR}
   ${CMAKE_CURRENT_LIST_DIR}/.. # for our common lwipopts or any other standard includes, if required
 )
-target_link_libraries(FreeRTOS pico_stdlib freertos letter_shell)
+target_link_libraries(FreeRTOS 
+        pico_stdlib 
+        freertos 
+        letter_shell 
+        pico_cyw43_arch_lwip_poll)
 
 add_subdirectory(freertos)
 add_subdirectory(service)
@@ -54,7 +58,7 @@ target_link_libraries(FreeRTOS
         hardware_timer
         hardware_watchdog
         hardware_clocks
-        pico_cyw43_arch_lwip_threadsafe_background
+        pico_cyw43_arch_lwip_poll
         )
 
 pico_add_extra_outputs(FreeRTOS)
