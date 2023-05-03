@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <task.h>
 #include "shell_port.h"
-
+#define PICO_DEFAULT_LED_PIN 25
 void led_task()
 {
     const uint LED_PIN = PICO_DEFAULT_LED_PIN;
