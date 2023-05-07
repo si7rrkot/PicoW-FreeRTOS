@@ -43,7 +43,8 @@ target_link_libraries(FreeRTOS
         pico_stdlib 
         freertos 
         letter_shell 
-        pico_cyw43_arch_lwip_poll)
+        pico_cyw43_arch_lwip_poll
+        wifi)
 
 add_subdirectory(freertos)
 add_subdirectory(service)
