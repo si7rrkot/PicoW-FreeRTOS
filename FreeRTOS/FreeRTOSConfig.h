@@ -60,6 +60,9 @@
 /* Define to trap errors during development. */
 #define configASSERT(x)
 
+#define configENABLE_MPU                        0
+#define configSYSTEM_CALL_STACK_SIZE            512
+
 /* Optional functions - most linkers will remove unused functions anyway. */
 #define INCLUDE_vTaskPrioritySet            1
 #define INCLUDE_uxTaskPriorityGet           1

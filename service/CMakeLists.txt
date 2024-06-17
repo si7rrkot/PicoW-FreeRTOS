@@ -12,9 +12,9 @@ ${LETTER_SHELL}/src/shell_port.c
 target_include_directories(letter_shell PUBLIC
     .
     ${LETTER_SHELL}/includes/
-    ${LETTER_SHELL}/../../freertos/FreeRTOS-Kernel/include/
-    ${LETTER_SHELL}/../../freertos/
-    ${LETTER_SHELL}/../../freertos/FreeRTOS-Kernel/portable/GCC/ARM_CM0
+    ${SOURCE_DIR}/FreeRTOS/FreeRTOS-Kernel/include/
+    ${SOURCE_DIR}/FreeRTOS/
+    ${SOURCE_DIR}/FreeRTOS/FreeRTOS-Kernel/portable/GCC/ARM_CM0
 )
 
 add_library(wifi

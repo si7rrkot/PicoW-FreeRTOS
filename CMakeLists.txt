@@ -5,9 +5,11 @@ cmake_minimum_required(VERSION 3.13)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 
+# 获取当前CMakeLists.txt文件所在的路径
+set(SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 # Initialise pico_sdk from installed location
 # (note this can come from environment, CMake cache etc)
-set(PICO_SDK_PATH "/home/taryn/src/other/pico/pico-sdk")
+set(PICO_SDK_PATH "${SOURCE_DIR}/pico-sdk")
 
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include(pico_sdk_import.cmake)
@@ -46,7 +48,7 @@ target_link_libraries(FreeRTOS
         pico_cyw43_arch_lwip_poll
         wifi)
 
-add_subdirectory(freertos)
+add_subdirectory(FreeRTOS)
 add_subdirectory(service)
 
 # Add any user requested libraries
